@@ -27,3 +27,40 @@ st.write("😀 Streamlit 공부중")
 :gray[토트넘]
 """
 
+'#:blue[Streamlit 그래프]'
+
+import pandas as pd
+import numpy as np
+
+st.write("# 그래프 예제")
+
+chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=["a", "b", "c"]
+)
+
+st.area_chart(chart_data)
+
+st.line_chart(chart_data)
+
+st.bar_chart(chart_data)
+
+st.scatter_chart(chart_data)
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+st.write("# :blue[시각화 라이브러리]")
+
+st.write("#### :orange[Matplotlib: st.pyplot()]")
+
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+fig, ax = plt.subplots()
+
+ax.plot(x, y)
+
+st.pyplot(fig)
+
+
